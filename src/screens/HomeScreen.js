@@ -40,7 +40,7 @@ export default function HomeScreen() {
             onPress={this._handleUnlock1}>
             <View style={{ flexDirection: 'row' }}>
               <View style={styles.optionTextContainer}>
-                <Text style={styles.optionText}>Exterior door 1 {this.state._oneunlocked ? "(Unlocked)" : "(Locked)"}</Text>
+                <Text style={styles.optionText}>Exterior door 1</Text>
               </View>
             </View>
           </Touchable>
@@ -116,12 +116,8 @@ _handleUnlock1 = () => {
   request.setRequestHeader('Content-Type', 'text/plain');
   request.send(`${global.emergencyDetails.outsideqr}1`);
   dispatch.doorStatus = 'Open';
-  this.state._oneunlocked = true;
 };
 
-state = {
-  _oneunlocked: false
-};
 
 function handleLearnMorePress() {
   WebBrowser.openBrowserAsync(
