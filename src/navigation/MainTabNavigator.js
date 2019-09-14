@@ -69,8 +69,8 @@ PostQRStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  PostQRStack,
   CameraStack,
+  PostQRStack
 });
 
 const app = createAppContainer(tabNavigator);
