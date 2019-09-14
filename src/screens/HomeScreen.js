@@ -1,11 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
-<<<<<<< HEAD
-import emergencies from ./assets/Emergencies
-=======
-import floorplan from ../images/FloorPlan.png
->>>>>>> master
 import React from 'react';
-import ServerCallUnlock
 import {
   Image,
   Platform,
@@ -17,7 +11,7 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
-ServerCallUnlock.openDoor();
+
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
@@ -38,9 +32,7 @@ export default function HomeScreen() {
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
 
-          <Text style={styles.getStartedText}>Floor view</Text>
-          <img src={floorplan} />
-
+          <Text style={styles.getStartedText}>Get started by opening</Text>
 
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
@@ -52,8 +44,6 @@ export default function HomeScreen() {
           </Text>
         </View>
 
-
-
         <View style={styles.helpContainer}>
           <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
             <Text style={styles.helpLinkText}>
@@ -62,10 +52,6 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </View>
       </ScrollView>
-
-      <text>
-      var str = JSON.stringify(obj, null, 1);
-      </text>
 
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
