@@ -9,10 +9,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Touchable from 'react-native-platform-touchable';
 import '../global';
 
 import { MonoText } from '../components/StyledText';
-console.log(global.emergencyDetails.first.address);
 
 export default function HomeScreen() {
   return (
@@ -32,30 +32,39 @@ export default function HomeScreen() {
         </View>
 
         <View>
-          <Text style={styles.tabBarInfoText}>Sah dude</Text>
-        </View>
+          <Text style={styles.tabBarInfoText}>We found exterior doors at {global.emergencyDetails.address}.</Text>
 
-        {/* <View style={styles.getStartedContainer}>
-          <Text style={styles.DevelopmentModeText}></Text>
-          <Text style={styles.getStartedText}>Get started by opening</Text>
-           <text>
-            var str = JSON.stringify(emergencyDetails[Math.randNum(0, 2)*10.ceil()], null, 1);
-           </text>
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-          <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.
-          </Text>
+          <Touchable
+            style={styles.option}
+            background={Touchable.Ripple('#ccc', true)}
+            onPress={this._handleUnlock1}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={styles.optionTextContainer}>
+                <Text style={styles.optionText}>Exterior door 1</Text>
+              </View>
+            </View>
+          </Touchable>
+          <Touchable
+            style={styles.option}
+            background={Touchable.Ripple('#ccc', true)}
+            onPress={this._handleUnlock1}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={styles.optionTextContainer}>
+                <Text style={styles.optionText}>Exterior door 2</Text>
+              </View>
+            </View>
+          </Touchable>
+          <Touchable
+            style={styles.option}
+            background={Touchable.Ripple('#ccc', true)}
+            onPress={this._handleUnlock1}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={styles.optionTextContainer}>
+                <Text style={styles.optionText}>Exterior door 3</Text>
+              </View>
+            </View>
+          </Touchable>
         </View>
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
-            </Text>
-          </TouchableOpacity>
-        </View> */}
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
@@ -64,9 +73,9 @@ export default function HomeScreen() {
         </Text>
 
         <View
-          style={[global.emergencyDetails.first.sentrySecured === "SENTRY Secured" ? styles.codeHighlightContainerGreen : styles.codeHighlightContainerRed, styles.navigationFilename]}>
+          style={[global.emergencyDetails.sentrySecured === "SENTRY Secured" ? styles.codeHighlightContainerGreen : styles.codeHighlightContainerRed, styles.navigationFilename]}>
           <MonoText style={styles.codeHighlightText}>
-            {global.emergencyDetails.first.sentrySecured}
+            {global.emergencyDetails.sentrySecured}
           </MonoText>
         </View>
       </View>
@@ -100,6 +109,15 @@ function DevelopmentModeNotice() {
     );
   }
 }
+
+_handleUnlock1 = () => {
+  let request = new XMLHttpRequest();
+  request.open("POST", 'https://firstnethackathon.herokuapp.com/api/doorEntry', true);
+  request.setRequestHeader('Content-Type', 'text/plain');
+  request.send(`${global.emergencyDetails.outsideqr}1`);
+  dispatch.doorStatus = 'Open';
+};
+
 
 function handleLearnMorePress() {
   WebBrowser.openBrowserAsync(
@@ -205,5 +223,49 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  container: {
+    flex: 1,
+    paddingTop: 15,
+  },
+  optionsTitleText: {
+    fontSize: 16,
+    marginLeft: 15,
+    marginTop: 9,
+    marginBottom: 12,
+  },
+  optionIconContainer: {
+    marginRight: 9,
+  },
+  option: {
+    backgroundColor: '#fdfdfd',
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '#EDEDED',
+  },
+  optionText: {
+    fontSize: 15,
+    marginTop: 1,
+  },
+  tabBarInfoContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    ...Platform.select({
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: -3 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+      },
+      android: {
+        elevation: 20,
+      },
+    }),
+    alignItems: 'center',
+    backgroundColor: '#fbfbfb',
+    paddingVertical: 20,
   },
 });
