@@ -47,7 +47,7 @@ global.emergencyDetails = [
     "name": "School Shooter",
     "caller gender": "Female",
     "address": "720 Northwestern Ave",
-    "sentrySecured": "Not SENTRY Secured",
+    "sentrySecured": "SENTRY Secured",
     "outsideqr": "abc"
   },
   {
