@@ -64,7 +64,7 @@ export default function HomeScreen() {
       </ScrollView>
 
       <text>
-      var str = JSON.stringify(emergencyDetails[Math.randNum(1, 3)*10.ceil()], null, 1);
+      var str = JSON.stringify(emergencyDetails[Math.randNum(0, 2)*10.ceil()], null, 1);
       </text>
 
       <View style={styles.tabBarInfoContainer}>
