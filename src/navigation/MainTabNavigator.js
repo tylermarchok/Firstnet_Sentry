@@ -20,7 +20,7 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Info',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -68,8 +68,8 @@ PostQRStack.navigationOptions = {
 PostQRStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
-  HomeStack,
   CameraStack,
+  HomeStack,
   PostQRStack
 });
 

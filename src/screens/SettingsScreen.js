@@ -1,10 +1,10 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { PostQRView } from '@expo/samples';
 
 export default function PostQRScreen() {
     return (
-        <ScrollView style={styles.container}>
+        <View>
         {
         /**
          * Go ahead and delete ExpoConfigView and replace it with your content;
@@ -12,7 +12,7 @@ export default function PostQRScreen() {
          */
         }
             <PostQRView />
-        </ScrollView>);
+        </View>);
 }
 
 PostQRScreen.navigationOptions = {

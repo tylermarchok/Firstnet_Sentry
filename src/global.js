@@ -27,8 +27,10 @@ global.dispatch = {
         }
     },
     getDispatch () {
-  
-    }
+
+    },
+    qrCode: '',
+    doorStatus: 'Closed'
   };
   
 global.location = {
