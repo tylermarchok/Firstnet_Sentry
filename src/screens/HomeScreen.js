@@ -66,7 +66,7 @@ export default function HomeScreen() {
        int randNum = Math.randNum(1, 3)*10.ceil()
 
       <text>
-      var str = JSON.stringify(ID.randNum, null, 1);
+      var str = JSON.stringify(emergencyDetails[randNum], null, 1);
       </text>
 
       <View style={styles.tabBarInfoContainer}>
