@@ -1,4 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
+import emergencies from ./assets/Emergencies
 import React from 'react';
 import {
   Image,
