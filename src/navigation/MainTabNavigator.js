@@ -60,9 +60,9 @@ const PostQRStack = createStackNavigator(
 );
 
 PostQRStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: 'Actions',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-settings' : 'md-settings'} />
   ),
 };
 
