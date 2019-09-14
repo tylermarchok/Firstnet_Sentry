@@ -1,11 +1,11 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator, createNavigator, createAppContainer } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
+import PostQRScreen from '../screens/SettingsScreen';
 import CameraScreen from '../screens/CameraScreen';
-import SettingsScreen from '../screens/SettingsScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -20,7 +20,7 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Info',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -51,28 +51,30 @@ CameraStack.navigationOptions = {
 
 CameraStack.path = '';
 
-const SettingsStack = createStackNavigator(
+const PostQRStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    PostQR: PostQRScreen
   },
   config
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+PostQRStack.navigationOptions = {
+  tabBarLabel: 'Actions',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-settings' : 'md-settings'} />
   ),
 };
 
-SettingsStack.path = '';
+PostQRStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
-  HomeStack,
   CameraStack,
-  SettingsStack,
+  HomeStack,
+  PostQRStack
 });
+
+const app = createAppContainer(tabNavigator);
 
 tabNavigator.path = '';
 
-export default tabNavigator;
+export default app;

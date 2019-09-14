@@ -22,15 +22,15 @@ export default function HomeScreen() {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
+                ? require('../assets/images/icon.png')
+                : require('../assets/images/icon.png')
             }
             style={styles.welcomeImage}
           />
         </View>
 
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
+        {/* <View style={styles.getStartedContainer}>
+          <Text style={styles.DevelopmentModeText}></Text>
 
           <Text style={styles.getStartedText}>Get started by opening</Text>
 
@@ -54,18 +54,18 @@ export default function HomeScreen() {
               Help, it didn’t automatically reload!
             </Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
+          Dispatched to room:
         </Text>
 
         <View
           style={[styles.codeHighlightContainer, styles.navigationFilename]}>
           <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
+            {dispatch.tabRoom}
           </MonoText>
         </View>
       </View>
@@ -119,10 +119,11 @@ const styles = StyleSheet.create({
   },
   developmentModeText: {
     marginBottom: 20,
+    marginLeft: -30,
     color: 'rgba(0,0,0,0.4)',
     fontSize: 14,
     lineHeight: 19,
-    textAlign: 'center',
+    textAlign: 'left',
   },
   contentContainer: {
     paddingTop: 30,
@@ -130,13 +131,13 @@ const styles = StyleSheet.create({
   welcomeContainer: {
     alignItems: 'center',
     marginTop: 10,
-    marginBottom: 20,
+    marginBottom: 5,
   },
   welcomeImage: {
     width: 100,
-    height: 80,
+    height: 60,
     resizeMode: 'contain',
-    marginTop: 3,
+    marginTop: 0,
     marginLeft: -10,
   },
   getStartedContainer: {
