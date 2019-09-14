@@ -34,6 +34,10 @@ export default function HomeScreen() {
 
           <Text style={styles.getStartedText}>Get started by opening</Text>
 
+           <text>
+            var str = JSON.stringify(emergencyDetails[Math.randNum(0, 2)*10.ceil()], null, 1);
+           </text>
+
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
             <MonoText>screens/HomeScreen.js</MonoText>
