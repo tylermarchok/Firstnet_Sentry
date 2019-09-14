@@ -1,8 +1,8 @@
 {
   "hostType": "lan",
   "lanType": "ip",
-  "dev": false,
-  "minify": true,
-  "urlRandomness": "4u-rtg",
+  "dev": true,
+  "minify": false,
+  "urlRandomness": "42-az2",
   "https": false
 }

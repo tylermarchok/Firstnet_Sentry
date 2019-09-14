@@ -4,8 +4,8 @@ import { createStackNavigator, createBottomTabNavigator, createNavigator, create
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
 import PostQRScreen from '../screens/SettingsScreen';
+import CameraScreen from '../screens/CameraScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -35,21 +35,21 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const CameraStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Camera: CameraScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+CameraStack.navigationOptions = {
+  tabBarLabel: 'Camera',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-camera' : 'md-camera'} />
   ),
 };
 
-LinksStack.path = '';
+CameraStack.path = '';
 
 const PostQRStack = createStackNavigator(
   {
@@ -69,8 +69,8 @@ PostQRStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
   PostQRStack,
+  CameraStack,
 });
 
 const app = createAppContainer(tabNavigator);
