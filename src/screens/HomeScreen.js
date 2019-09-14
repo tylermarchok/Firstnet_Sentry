@@ -29,7 +29,7 @@ export default function HomeScreen() {
           />
         </View>
 
-        <View style={styles.getStartedContainer}>
+        {/* <View style={styles.getStartedContainer}>
           <Text style={styles.DevelopmentModeText}></Text>
 
           <Text style={styles.getStartedText}>Get started by opening</Text>
@@ -50,7 +50,7 @@ export default function HomeScreen() {
               Help, it didn’t automatically reload!
             </Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>

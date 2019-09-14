@@ -1,12 +1,11 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator, createNavigator, createAppContainer } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
-import { PostQRView } from '@expo/samples';
+import PostQRScreen from '../screens/SettingsScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -54,7 +53,7 @@ LinksStack.path = '';
 
 const PostQRStack = createStackNavigator(
   {
-    PostQR: PostQRView,
+    PostQR: PostQRScreen
   },
   config
 );
@@ -74,6 +73,8 @@ const tabNavigator = createBottomTabNavigator({
   PostQRStack,
 });
 
+const app = createAppContainer(tabNavigator);
+
 tabNavigator.path = '';
 
-export default tabNavigator;
+export default app;
