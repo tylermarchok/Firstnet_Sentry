@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import { PostQRView } from '@expo/samples';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -51,26 +52,26 @@ LinksStack.navigationOptions = {
 
 LinksStack.path = '';
 
-const SettingsStack = createStackNavigator(
+const PostQRStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    PostQR: PostQRView,
   },
   config
 );
 
-SettingsStack.navigationOptions = {
+PostQRStack.navigationOptions = {
   tabBarLabel: 'Settings',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
   ),
 };
 
-SettingsStack.path = '';
+PostQRStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
-  SettingsStack,
+  PostQRStack,
 });
 
 tabNavigator.path = '';
