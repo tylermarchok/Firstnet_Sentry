@@ -1,5 +1,7 @@
 import * as WebBrowser from 'expo-web-browser';
+import floorplan from ../images/FloorPlan.png
 import React from 'react';
+import ServerCallUnlock
 import {
   Image,
   Platform,
@@ -11,7 +13,7 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
-
+ServerCallUnlock.openDoor();
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
@@ -32,7 +34,9 @@ export default function HomeScreen() {
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
 
-          <Text style={styles.getStartedText}>Get started by opening</Text>
+          <Text style={styles.getStartedText}>Floor view</Text>
+          <img src={floorplan} />
+
 
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
