@@ -35,27 +35,30 @@ global.dispatch = {
     doorStatus: 'Closed'
   };
 
-global.emergencyDetails = {
-  first: {
+global.emergencyDetails = [
+  {
     "name": "Domestic Abuse",
     "caller gender": "Male",
     "address": "1075 Wooded Crest Drive",
-    "sentrySecured": "SENTRY Secured"
+    "sentrySecured": "SENTRY Secured",
+    "outsideqr": "abc"
   },
-  second: {
+  {
     "name": "School Shooter",
     "caller gender": "Female",
-    "address": "720 Northwestern Ave.",
-    "sentrySecured": "Not SENTRY Secured"
+    "address": "720 Northwestern Ave",
+    "sentrySecured": "Not SENTRY Secured",
+    "outsideqr": "abc"
   },
-  third: {
+  {
     "name": "Fire",
     "caller gender": "Male",
     "address": "50 Nimitz Drive",
-    "sentrySecured": "Yes"
+    "sentrySecured": "SENTRY Secured",
+    "outsideqr": "abc"
   }
-}
-  
+][Math.floor(Math.random() * 3)]
+
 global.location = {
     latitude: {
       value: 0,
