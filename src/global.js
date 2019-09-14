@@ -1,3 +1,5 @@
+import {emergencyDetails} from './assets/emergencyEvents/emergencyEvents.js/'
+
 global.dispatch = {
     dispatched: false,
     latitude: {
@@ -32,6 +34,27 @@ global.dispatch = {
     qrCode: '',
     doorStatus: 'Closed'
   };
+
+global.emergencyDetails = {
+  first: {
+    "name": "Domestic Abuse",
+    "caller gender": "Male",
+    "address": "1075 Wooded Crest Drive",
+    "sentrySecured": "SENTRY Secured"
+  },
+  second: {
+    "name": "School Shooter",
+    "caller gender": "Female",
+    "address": "720 Northwestern Ave.",
+    "sentrySecured": "Not SENTRY Secured"
+  },
+  third: {
+    "name": "Fire",
+    "caller gender": "Male",
+    "address": "50 Nimitz Drive",
+    "sentrySecured": "Yes"
+  }
+}
   
 global.location = {
     latitude: {

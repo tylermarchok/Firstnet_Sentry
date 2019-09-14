@@ -9,8 +9,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import '../global';
 
 import { MonoText } from '../components/StyledText';
+console.log(global.emergencyDetails.first.address);
 
 export default function HomeScreen() {
   return (
@@ -29,25 +31,24 @@ export default function HomeScreen() {
           />
         </View>
 
+        <View>
+          <Text style={styles.tabBarInfoText}>Sah dude</Text>
+        </View>
+
         {/* <View style={styles.getStartedContainer}>
           <Text style={styles.DevelopmentModeText}></Text>
-
           <Text style={styles.getStartedText}>Get started by opening</Text>
-
            <text>
             var str = JSON.stringify(emergencyDetails[Math.randNum(0, 2)*10.ceil()], null, 1);
            </text>
-
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
             <MonoText>screens/HomeScreen.js</MonoText>
           </View>
-
           <Text style={styles.getStartedText}>
             Change this text and your app will automatically reload.
           </Text>
         </View>
-
         <View style={styles.helpContainer}>
           <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
             <Text style={styles.helpLinkText}>
@@ -59,13 +60,13 @@ export default function HomeScreen() {
 
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
-          Dispatched to room:
+          Room is:
         </Text>
 
         <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}>
+          style={[global.emergencyDetails.first.sentrySecured === "SENTRY Secured" ? styles.codeHighlightContainerGreen : styles.codeHighlightContainerRed, styles.navigationFilename]}>
           <MonoText style={styles.codeHighlightText}>
-            {dispatch.tabRoom}
+            {global.emergencyDetails.first.sentrySecured}
           </MonoText>
         </View>
       </View>
@@ -150,8 +151,13 @@ const styles = StyleSheet.create({
   codeHighlightText: {
     color: 'rgba(96,100,109, 0.8)',
   },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
+  codeHighlightContainerRed: {
+    backgroundColor: 'rgb(255,205,210)',
+    borderRadius: 3,
+    paddingHorizontal: 4,
+  },
+  codeHighlightContainerGreen: {
+    backgroundColor: 'rgb(165,214,167)',
     borderRadius: 3,
     paddingHorizontal: 4,
   },
