@@ -1,5 +1,14 @@
 # BuiltWithATT
+## Contributors
+* [Ryan Schwartz](https://github.com/RyanSchw), Purdue
+* [Dawson Moore](https://github.com/DMoore12), Purdue
+* [Jack LeCroy](https://github.com/jacklecroy), Purdue
+* [Tyler Marchok](https://github.com/tylermarchok), Purdue
 
+## Result
+3rd place in "Best App for First Responders"
+
+## Purpose
 Example scenario:
 A medical emergency is happening in apartment 301 of the apartment complex. This medical emergency requires the immediate attention of EMS personnel. When EMS approach the door to the apartment complex, they find it is locked. Without much time to spare, they are forced to break open the door to attend to the injured person.
 
