@@ -1,4 +1,4 @@
-# BuiltWithATT
+# Sentry - FirstNet Hackathon: The Road to 5G
 ## Contributors
 * [Ryan Schwartz](https://github.com/RyanSchw), Purdue
 * [Dawson Moore](https://github.com/DMoore12), Purdue
